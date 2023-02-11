@@ -1,17 +1,39 @@
-# Проект: Место
+![Яндекс практикум](https://m.seonews.ru/upload/iblock/f73/f73322ed95450f64df7156706fc01091.jpg)
+# Проектная работа. Mestro.
+____
 
-### Обзор
+Учебная проектная работа Яндекс практикума по веб-разработке на тему **Mestro**
+[Ссылка на проект](https://angels132.github.io/russian-travel/)
+___
+## Описание:
 
-* Figma
-* Картинки
+Одностраничный лендинг, с использованием HTML, CSS и JS.
 
-**Figma**
+___
+## Технологии:
++ Элементы позиционирования
++ Анимации
++ Методолгия БЭМ Nested
++ Git
++ Flexbox
++ iframe
++ keyframes
++ Grid
++ Адаптивная версткая под различные размеры экрана
++ JS
+    
+____
+## Будущие доработки проекта будут включать в себя :
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
 
-**Картинки**
 
-Доставать картинки предстоит из Фигмы. Это расхожая практика, поэтому полезно потренироваться.
-Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
+____
+### Чеклист для самопроверки:
 
-Удачи!
++ [Чеклист для самопроверки. 1 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-1.pdf)
+
++ [Чеклист для самопроверки. 2 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-2.pdf)
+
++ [Чеклист для самопроверки. 3 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-3.pdf)
+
++ [Чеклист для самопроверки. 4 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-4.pdf)

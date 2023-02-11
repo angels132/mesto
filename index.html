@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto</title>
+</head>
+<body class="page">
+  <div class="page__container">
+    <header class="header">
+      <img class="header__logo" alt="Логотип" src="./images/Logo.svg">
+    </header>
+
+    <main class="content">
+      <section class="profile">
+        <img class="profile__avatar" src="./images/deathnote.jpg" alt="Фотография профиля">
+        <div class="profile__info">
+          <h1 id="profile__name" class="profile__name">Жак-Ив Кусто</h1>
+          <button type="button" class="profile__edit-button"></button>
+          <p id="profile__job" class="profile__job">Исследователь аниме</p>
+        </div>
+        <button type="button" class="profile__add-button"></button>
+      </section>
+
+      <section class="elements">
+        <ul class="elements__list">
+          <li class="elements__list-item">
+            <img class="elements__picture" src="./images/yourname.jpg" alt="Река из аниме твое имя">
+            <div class="elements__container">
+              <h2 class="elements__text">Твоё имя</h2>
+              <button class="elements__button"></button>
+            </div>
+          </li>
+
+          <li class="elements__list-item">
+            <img class="elements__picture" src="./images/Bleach.jpg" alt="Река Карасу из аниме Bleach">
+            <div class="elements__container">
+              <h2 class="elements__text">Река Карасу</h2>
+              <button class="elements__button"></button>
+            </div>
+          </li>
+
+          <li class="elements__list-item">
+            <img class="elements__picture" src="./images/EverlastingSummer.jpg" alt="Река из бесконечного лета">
+            <div class="elements__container">
+              <h2 class="elements__text">Everlasting Summer</h2>
+              <button class="elements__button"></button>
+            </div>
+          </li>
+
+          <li class="elements__list-item">
+            <img class="elements__picture" src="./images/Fukiware.jpg" alt="Водопад Фукиваре">
+            <div class="elements__container">
+              <h2 class="elements__text">Водопад Фукиваре</h2>
+              <button class="elements__button"></button>
+            </div>
+          </li>
+
+          <li class="elements__list-item">
+            <img class="elements__picture" src="./images/Attckontitan.png" alt="Океан из аниме: Атака титанов">
+            <div class="elements__container">
+              <h2 class="elements__text">Атака титанов</h2>
+              <button class="elements__button"></button>
+            </div>
+          </li>
+
+          <li class="elements__list-item">
+            <img class="elements__picture" src="./images/unesennieprizrakam.jpg" alt="Аниме унисенные призраками">
+            <div class="elements__container">
+              <h2 class="elements__text">Унисенные призраками</h2>
+              <button class="elements__button"></button>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__author">&copy; 2023 Mesto Anime</p>
+    </footer>
+
+    <div class="popup">
+      <form name="popup" class="popup__container">
+        <p class="popup__title">Редактировать профиль</p>
+        <input name="name" class="popup__name" type="text">
+        <input name="job" class="popup__job" type="text">
+        <button type="submit" class="popup__save-button">Сохранить</button>
+        <button type="button" class="popup__close-button"></button>
+      </form>
+    </div>
+
+  </div>
+<script src="sripts/sript.js"></script>
+</body>
+</html>
