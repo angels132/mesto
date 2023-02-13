@@ -6,10 +6,9 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border: 2px solid #fff;
-
+  border-radius: 2px;
   margin-left: auto;
   padding: 0;
-
 }
 
 .profile__add-button:hover {
