@@ -3,8 +3,10 @@
   font-size: 42px;
   line-height: 1.33;
   overflow: hidden;
+  word-wrap: break-word;
   text-overflow: ellipsis;
   white-space: nowrap;
+  position: relative;
   
   margin: 0;
   

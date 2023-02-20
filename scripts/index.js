@@ -1,9 +1,9 @@
 const popup = document.querySelector('.popup');
-const popupForm = document.querySelector('.popup__container');
+const popupForm = document.querySelector('.popup__form');
 const popupOpenButton = document.querySelector('.profile__edit-button');
 const popupCloseButton = popup.querySelector('.popup__close-button');
-const nameInput = popupForm.querySelector('.popup__input[name="name"]');
-const jobInput = popupForm.querySelector('.popup__input[name="job"]');
+const nameInput = popupForm.querySelector('.popup__input_type_name');
+const jobInput = popupForm.querySelector('.popup__input_type_job');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
 
