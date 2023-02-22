@@ -4,15 +4,11 @@
     border-bottom: 1px solid rgba(0, 0, 0, .2);
     margin: 0 0 30px;
     padding: 0;
-    padding-bottom: 12px;
+    padding-bottom: 13px;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 .popup__input:focus {
     outline: none;
-}
-
-@media screen and (max-width: 767px) {
-    .popup__name {
-        font-size: 14px;
-    }
 }
