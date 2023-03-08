@@ -8,7 +8,7 @@
   font-weight: 400;
   padding: 14px 82px;
   border: none;
-  transition: all .1s linear;
+  transition: all .2s linear;
   margin-top: 18px;
 }
 
@@ -19,8 +19,8 @@
 
 @media screen and (max-width: 767px) {
   .popup__save-button {
-    width: 100%;
-    line-height: 17px;
+    width: 200px;
     font-size: 14px;
+    line-height: 17px;
   }
 }

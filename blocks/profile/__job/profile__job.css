@@ -7,9 +7,6 @@
   color: #fff;
   margin: 0;
   grid-area: job;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 @media screen and (max-width: 1023px) {

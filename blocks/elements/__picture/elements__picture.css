@@ -5,5 +5,11 @@
   z-index: 1;
   margin: 0;
   padding: 0;
-  object-fit: cover;
+  transition: all .2s linear;
+}
+
+.elements__picture:hover {
+  cursor: pointer;
+  opacity: .6;
+  transform: scale(1.05);
 }

@@ -8,12 +8,14 @@
   row-gap: 20px;
   justify-items: center;
 }
+
 @media screen and (max-width: 1279px) {
   .elements__list {
     grid-template-columns: repeat(2, 1fr);
     max-width: 582px;
   }
 }
+
 @media screen and (max-width: 767px) {
   .elements__list {
     grid-template-columns: repeat(1, 1fr);

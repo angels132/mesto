@@ -1,5 +1,6 @@
 .elements__container {
   display: flex;
   justify-content: space-between;
+  background-color: white;
   margin: 25px 15px 31px 21px;
 }
