@@ -1,30 +1,30 @@
 'use strict';
 //Карточки
 const initialCards = [
-{
-  name: 'Архыз',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-},
-{
-  name: 'Челябинская область',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-},
-{
-  name: 'Иваново',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-},
-{
-  name: 'Камчатка',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-},
-{
-  name: 'Холмогорский район',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-},
-{
-  name: 'Байкал',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-}
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
 ];
 
 //Шаблон карточки
@@ -63,7 +63,7 @@ function togglePopup(popup) {
 }
 
 //добавление карточек
-const addCardToContainer = (cardElement)  => {
+const addCardToContainer = (cardElement) => {
   const cardsElement = cardTemplate.content.cloneNode(true);
   cardsElement.querySelector('.elements__text').textContent = cardElement.name;
   cardsElement.querySelector('.elements__picture').src = cardElement.link;
@@ -117,32 +117,32 @@ photoCloseButton.addEventListener('click', event => {
 
 profileEditButton.addEventListener('click', function () {
   nameInput.value = profileName.textContent;
-  jobInput.value = profileJob.textContent;   
+  jobInput.value = profileJob.textContent;
   togglePopup(editPopup);
 });
 
-cardAddButton.addEventListener('click', function () {  
+cardAddButton.addEventListener('click', function () {
   togglePopup(addPopup);
 });
 
 //сохранение профиля
 profileSaveButton.addEventListener('click', event => {
-    event.preventDefault();
-    profileName.textContent = nameInput.value;
-    profileJob.textContent = jobInput.value;
-    popupAddForm.reset();
-    const clickClose = event.target.closest('.popup');
-    clickClose.classList.toggle('popup_opened');
-  });
-  
+  event.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
+  popupAddForm.reset();
+  const clickClose = event.target.closest('.popup');
+  clickClose.classList.toggle('popup_opened');
+});
+
 cardSaveButton.addEventListener('click', event => {
   event.preventDefault();
-//создание объекта из введенных данных
-  let newCard = 
-    {
-      name: placeName.value,
-      link: placeLink.value
-    };
+  //создание объекта из введенных данных
+  let newCard =
+  {
+    name: placeName.value,
+    link: placeLink.value
+  };
   addCardToContainer(newCard);
   popupAddForm.reset();
   const clickClose = event.target.closest('.popup');
