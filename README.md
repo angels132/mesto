@@ -37,3 +37,5 @@ ____
 + [Чеклист для самопроверки. 3 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-3.pdf)
 
 + [Чеклист для самопроверки. 4 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-4.pdf)
+
++ [Чеклист для самопроверки. 5 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-5.pdf)
