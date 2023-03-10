@@ -38,16 +38,17 @@ const profileJob = document.querySelector('.profile__job');
 const editPopup = document.getElementById('editProfile');
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileSaveButton = editPopup.querySelector('.popup__save-button');
-const nameInput = editPopup.querySelector('.popup__input[name="name"]');
-const jobInput = editPopup.querySelector('.popup__input[name="job"]');
-
+const profileEditForm = document.forms.profile;
+//инпуты в форме редактирования
+const nameInput = profileEditForm.elements.name;
+const jobInput = profileEditForm.elements.job;
 //Добавление
 const addPopup = document.getElementById('addCard');
 const cardAddButton = document.querySelector('.profile__add-button');
-const popupAddForm = addPopup.querySelector('.popup__container');
+const popupAddForm = document.forms.newPlace;
 const cardSaveButton = addPopup.querySelector('.popup__save-button');
-const placeName = document.querySelector('.popup__input[name="placeName"]');
-const placeLink = document.querySelector('.popup__input[name="placeLink"]');
+const placeName = popupAddForm.elements.placeName;
+const placeLink = popupAddForm.elements.placeLink;
 
 //Просмотр фото
 const openPicturePopup = document.getElementById('openPicture');
@@ -58,8 +59,25 @@ const popupDescription = document.querySelector('.popup__image-subtitle');
 const cardsContainer = document.querySelector('.elements__list');
 
 //открытия / закрытия попапа
-function togglePopup(popup) {
-  popup.classList.toggle('popup_opened');
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+  closeOnEsc(popup);
+}
+
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+  window.onkeydown = null;
+}
+
+function closeOnEsc() {
+  window.onkeydown = event => {
+  if ( event.keyCode == 27 ) {
+    closePopup(addPopup);
+    closePopup(editPopup)
+    closePopup(openPicturePopup);
+    popupAddForm.reset();
+  }
+};
 }
 
 //добавление карточек
@@ -83,7 +101,9 @@ const addCardToContainer = (cardElement) => {
     const cardLink = event.target.src;
     const cardName = event.target.closest('.elements__list-item');
     const cardText = cardName.querySelector('.elements__text').textContent;
-    openPicturePopup.classList.toggle('popup_opened');
+    
+    // открытие попапа с фото
+    openPopup(openPicturePopup);
     popupPicture.src = cardLink;
     popupDescription.textContent = cardText;
   });
@@ -96,33 +116,32 @@ reversCards.forEach(addCardToContainer);
 // закрытие попапа редактирования
 const popupEditCloseButton = editPopup.querySelector('.popup__close-button');
 popupEditCloseButton.addEventListener('click', event => {
-  const clickClose = event.target.closest('.popup');
-  clickClose.classList.toggle('popup_opened');
+  closePopup(clickClose);
 });
+
 
 // закрытие попапа добавления
 const cardAddCloseButton = addPopup.querySelector('.popup__close-button');
 cardAddCloseButton.addEventListener('click', event => {
   const clickClose = event.target.closest('.popup');
-  clickClose.classList.toggle('popup_opened');
-  popupAddForm.reset();
+  closePopup(clickClose);
 });
 
 // закрытие попапа с фото
 const photoCloseButton = openPicturePopup.querySelector('.popup__close-button');
 photoCloseButton.addEventListener('click', event => {
   const clickClose = event.target.closest('.popup');
-  clickClose.classList.toggle('popup_opened');
+  closePopup(clickClose);
 });
 
 profileEditButton.addEventListener('click', function () {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-  togglePopup(editPopup);
+  openPopup(editPopup);
 });
 
 cardAddButton.addEventListener('click', function () {
-  togglePopup(addPopup);
+  openPopup(addPopup);
 });
 
 //сохранение профиля
@@ -132,13 +151,13 @@ profileSaveButton.addEventListener('click', event => {
   profileJob.textContent = jobInput.value;
   popupAddForm.reset();
   const clickClose = event.target.closest('.popup');
-  clickClose.classList.toggle('popup_opened');
+  closePopup(clickClose);
 });
 
 cardSaveButton.addEventListener('click', event => {
   event.preventDefault();
   //создание объекта из введенных данных
-  let newCard =
+  const newCard =
   {
     name: placeName.value,
     link: placeLink.value
@@ -146,5 +165,5 @@ cardSaveButton.addEventListener('click', event => {
   addCardToContainer(newCard);
   popupAddForm.reset();
   const clickClose = event.target.closest('.popup');
-  clickClose.classList.toggle('popup_opened');
+  closePopup(clickClose);
 });
