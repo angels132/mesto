@@ -48,6 +48,10 @@ const cardTemplate = document.querySelector('#card-template').content;
 
 const popupPhotos = document.querySelector('.popup_photos');
 const closePopupPhotos = popupPhotos.querySelector('.popup__close-button');
+const popupPhotosImage = document.querySelector('.popup__image');
+
+const popupDescription = document.querySelector('.popup__description');
+
 
 
 function openPopup(popupElement) {
@@ -98,11 +102,9 @@ function handleSubmitCard(evt) {
 }
 
 function openPopupPhotos(evt) {
-  const popupPhotosImage = document.querySelector('.popup__image');
-
   popupPhotosImage.src = evt.target.src;
   popupPhotosImage.alt = evt.target.alt;
-  popupPhotos.querySelector('.popup__description').textContent = evt.target.alt;
+  popupDescription.textContent = evt.target.alt;
   openPopup(popupPhotos);
 }
 
