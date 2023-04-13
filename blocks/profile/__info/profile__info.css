@@ -1,13 +1,18 @@
 .profile__info {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: calc((100vw - 320px) / (1280 - 320) * (480 - 285) + 285px);
+  max-width: 920px;
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  column-gap: 17px;
+  row-gap: 16px;
+  grid-template-areas: 
+  "name edit-button"
+  "job job"
 }
 
 @media screen and (max-width: 767px) {
   .profile__info {
     grid-template-columns: 1fr 18px;
-    column-gap: 10px;
+    column-gap: 7px;
     row-gap: 14px;
   }
 }

@@ -1,12 +1,12 @@
 .profile__job {
-  width: 80%;
-  margin: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-size: calc((100vw - 320px) / (1280 - 320) * (18 - 14) + 14px);
+  max-width: 500px;
+  word-wrap: break-word;
   font-weight: 400;
-  line-height: calc((100vw - 320px) / (1280 - 320) * (22 - 17) + 20px);
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  margin: 0;
+  grid-area: job;
 }
 
 @media screen and (max-width: 1023px) {
@@ -16,7 +16,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .profile__job {
+  .profile__job{
     font-size: 14px;
     line-height: 17px;
   }
