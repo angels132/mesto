@@ -97,8 +97,7 @@ function resetAddPopupFields() {
 
 }
 
-function closeOnEsc() {
-  window.onkeydown = event => {
+function closeOnEsc(event) {
     if (event.keyCode == 27) {
       closePopup(addPopup);
       closePopup(editPopup)
@@ -107,7 +106,6 @@ function closeOnEsc() {
       // resetAddPopupFields(cardAddCloseButton);
     }
   };
-}
 
 const generateCard = (cardElement) => {
   const cardsElement = cardTemplate.content.cloneNode(true);

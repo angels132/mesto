@@ -1,17 +1,11 @@
 .elements {
-  padding: 0 15%;
-  box-sizing: border-box;
-  width: 100%;
+  width: calc((100vw - 320px) / (1280 - 320) * (880 - 320) + 300px);
+  margin: calc((100vw - 320px) / (1280 - 320) * (51 - 36) + 36px) auto calc((100vw - 320px) / (1280 - 320) * (66 - 48) + 48px);
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .elements {
-    padding: 0;
-  }
-}
-
-@media screen and (max-width: 426px) {
-  .elements {
-    padding: 0;
+    width: 880px;
+    margin: 51px auto 66px;
   }
 }
