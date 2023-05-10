@@ -8,6 +8,9 @@ export class Card {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
+    this._element = null;
+    this._cardImage = null;
+    this._likeButton = null;
   }
 
   _getTemplate() {
@@ -15,49 +18,38 @@ export class Card {
       .querySelector(this._cardSelector)
       .content.querySelector(".elements__list-item")
       .cloneNode(true);
+      this._cardImage = cardElement.querySelector('.elements__picture');
+      this._likeButton = cardElement.querySelector('.elements__like-button');
     // возвращаем шаблон карточки
     return cardElement;
   }
   // метод, генерирующий карточку
   generateCard() {
     this._element = this._getTemplate();
-    // константы с изображением и текстом карточки
-    const elementPictureLink = this._element.querySelector(".elements__picture");
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
     const elementText = this._element.querySelector(".elements__text");
-
-    elementPictureLink.style.backgroundImage = "url("+`${this._link}`+")";
     elementText.textContent = this._name;
-    // устанавливаем обработчики событий на созданную карточку
     this._setEventListeners();
-
     return this._element;
   }
+
   // метод, установки обработчиков событий на элементы карточки
   _setEventListeners() {
-    this._element
-      .querySelector(".elements__like-button")
-      .addEventListener("click", () => {
-        this._likeButtonClick();
-      });
-    this._element
-      .querySelector(".elements__delete-button")
-      .addEventListener("click", () => {
-        this._deleteButtonClick();
-      });
-    this._element
-      .querySelector(".elements__picture")
-      .addEventListener("click", () => {
-        this._pictureClick();
-      });
+    this._likeButton.addEventListener("click", () => {
+      this._likeButtonClick();
+    });
+    this._element.querySelector(".elements__delete-button").addEventListener("click", () => {
+      this._deleteButtonClick();
+    });
+    this._cardImage.addEventListener("click", () => {
+      this._pictureClick();
+    });
   }
   // метод, переключающий стили кнопки "Лайк"
   _likeButtonClick() {
-    this._element
-      .querySelector(".elements__like-button")
-      .classList.toggle("elements__like-button_active");
-    this._element
-      .querySelector(".elements__like-button")
-      .classList.toggle("heartbeat");
+    this._likeButton.classList.toggle("elements__like-button_active");
+    this._likeButton.classList.toggle("heartbeat");
   }
   // метод, удаляющий карточку
   _deleteButtonClick() {
@@ -67,6 +59,7 @@ export class Card {
   _pictureClick() {
     openPopup(constants.openPicturePopup);
     constants.popupPicture.src = this._link;
+    constants.popupPicture.alt = this._name;
     constants.popupDescription.textContent = this._name;
   }
 }

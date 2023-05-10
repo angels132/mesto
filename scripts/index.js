@@ -18,30 +18,12 @@ const addPopupValidation = new FormValidator(
   editPopupValidation.enableValidation();
   addPopupValidation.enableValidation();
 
-// Открытие попапа
-export function openPopup(popup) {
-  popup.classList.add("popup_opened");
-  closeOnEsc(popup);
-}
 
-// Закрытие попапа
-function closePopup(popup) {
-  popup.classList.remove("popup_opened");
-  document.onkeyup = null;
-}
-
-// Закрытие на ESC
-function closeOnEsc() {
-  document.onkeyup = (event) => {
-    if (event.keyCode === constants.escKeyCode) {
-      // Активный попап
-      const activePopup = document.querySelector(".popup_opened");
-      closePopup(activePopup);
-      constants.popupAddForm.reset();
-    }
-  };
-}
-
+  function createCard(cardData) {
+    const card = new Card(cardData, ".cardTemplate");
+    return card.generateCard();
+  }
+  
 // закрытие попапа редактирования
 const popupEditCloseButton = constants.editPopup.querySelector(
   ".popup__close-button"
@@ -58,7 +40,6 @@ const popupEditCloseButton = constants.editPopup.querySelector(
     cardAddCloseButton.addEventListener("click", (event) => {
       const clickClose = event.target.closest(".popup");
       closePopup(clickClose);
-      constants.popupAddForm.reset();
     });
     
     // закрытие попапа с фото
@@ -93,10 +74,9 @@ const popupEditCloseButton = constants.editPopup.querySelector(
           name: constants.placeName.value,
           link: constants.placeLink.value,
     };
-    
-    const addCard = new Card(newCard, ".cardTemplate");
-    const cardElement = addCard.generateCard();
-    constants.cardsContainer.prepend(cardElement);
+     
+     const cardElement = createCard(newCard);
+     constants.cardsContainer.prepend(cardElement);
     
     //сброс полей формы
     constants.popupAddForm.reset();
@@ -135,9 +115,28 @@ const popupEditCloseButton = constants.editPopup.querySelector(
     closePopup(constants.openPicturePopup);
   });
   
-  initialCards.forEach((item) => {
-    const card = new Card(item, ".cardTemplate");
-    const cardExample = card.generateCard();
-    
-    constants.cardsContainer.append(cardExample);
-  });
+//открытие попапа 
+export function openPopup(popup) { 
+  popup.classList.add("popup_opened"); 
+  document.addEventListener("keydown", handleEscPress); 
+}
+
+//закрытие попапа 
+function closePopup(popup) { 
+  popup.classList.remove("popup_opened"); 
+  document.removeEventListener("keydown", handleEscPress); 
+}
+
+//закрытие попапа по клавише Esc 
+function handleEscPress(evt) { 
+  if (evt.key === "Esc" || evt.key === "Escape") { 
+    const openedPopup = document.querySelector(".popup_opened"); 
+    closePopup(openedPopup); 
+  } 
+}
+
+//заполнение начальных карточек 
+initialCards.forEach((cardData) => { 
+  const cardElement = createCard(cardData); 
+  constants.cardsContainer.append(cardElement); 
+});
