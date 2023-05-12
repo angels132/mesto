@@ -1,11 +1,9 @@
-
 export const escKeyCode = 27;
 
 export const cardTemplate = document.querySelector(".cardTemplate");
 
 export const profileName = document.querySelector(".profile__name");
 export const profileJob = document.querySelector(".profile__job");
-
 
 export const editPopup = document.getElementById("editProfile");
 
@@ -27,7 +25,6 @@ export const jobInputError = profileEditForm.querySelector(
   "#popup__job-input-error"
 );
 export const editOverlay = editPopup.querySelector(".popup__overlay");
-
 
 export const addPopup = document.getElementById("addCard");
 
@@ -56,9 +53,8 @@ export const popupPicture = document.querySelector(".popup__image");
 export const popupDescription = document.querySelector(
   ".popup__image-subtitle"
 );
-export const fullScreenOverlay = openPicturePopup.querySelector(
-  ".popup__overlay"
-);
+export const fullScreenOverlay =
+  openPicturePopup.querySelector(".popup__overlay");
 
 //контейнер для вставки карточек
 export const cardsContainer = document.querySelector(".elements__list");

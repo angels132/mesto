@@ -1,12 +1,3 @@
-export const enableValidation = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inputErrorClass: "popup__input_type_error",
-  inputError: ".popup__input-error",
-  errorClass: "popup__input-error_visible",
-};
-
 // Создание класса валидации
 export class FormValidator {
   constructor(popupElements, popupForm) {
@@ -65,17 +56,17 @@ export class FormValidator {
     this._errorElement.textContent = "";
   }
 
-  // Скрытие ошибок и очистка полей 
-  hideAllErrors() { 
-    this._errors.forEach((error) => { 
-      error.classList.remove(this._errorClass); 
-      error.textContent = ""; 
-    }); 
-    this._inputs.forEach((input) => { 
-      input.classList.remove(this._inputErrorClass); 
-    }); 
+  // Скрытие ошибок и очистка полей
+  hideAllErrors() {
+    this._errors.forEach((error) => {
+      error.classList.remove(this._errorClass);
+      error.textContent = "";
+    });
+    this._inputs.forEach((input) => {
+      input.classList.remove(this._inputErrorClass);
+    });
     this._disableSubmitButton();
-  } 
+  }
 
   // Установка слушателей
   _setEventListeners() {
@@ -94,9 +85,10 @@ export class FormValidator {
   // Валидация форм
   enableValidation() {
     this._setEventListeners();
-    this._form.addEventListener("submit", (event) => 
-      event.preventDefault(),
-      this._toggleSubmit(),
+    this._form.addEventListener(
+      "submit",
+      (event) => event.preventDefault(),
+      this._toggleSubmit()
     );
   }
 }
