@@ -1,0 +1,23 @@
+.elements__picture {
+  height: 282px;
+  width: 100%;
+  align-self: flex-start;
+  z-index: 1;
+  color: white;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+  background: rgb(115, 160, 223);
+  background: url("../../../images/Logo-white.svg"), linear-gradient(180deg, rgba(115, 160, 223, 1) 0%, rgba(77, 79, 163, 0.9) 50%, rgba(49, 21, 120, 0.9) 100%);
+  background-size: 50%, contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+}
+
+.elements__picture:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
