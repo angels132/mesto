@@ -69,26 +69,22 @@ export class FormValidator {
   }
 
   //* Установка слушателей
-  _setEventListeners() {
-    this._button = this._form.querySelector(this._submitButtonSelector);
-    //* Деактивация кнопки при открытии попапа
-    this._toggleSubmit();
-    //* Деактивация кнопки после отправки
-    this._inputs.forEach((element) => {
-      element.addEventListener("input", () => {
-        this._isValid(element);
-        this._toggleSubmit();
-      });
+  _setEventListeners() { 
+    this._button = this._form.querySelector(this._submitButtonSelector); 
+    this._toggleSubmit(); 
+    this._inputs.forEach((element) => { 
+      element.addEventListener("input", () => { 
+        this._isValid(element); 
+        this._toggleSubmit(); 
+      }); 
+    }); 
+    this._form.addEventListener("submit", evt => {
+      evt.preventDefault();
+      this._toggleSubmit();
     });
-  }
-
-  //* Валидация форм
-  enableValidation() {
-    this._setEventListeners();
-    this._form.addEventListener(
-      "submit",
-      (evt) => evt.preventDefault(),
-      this._toggleSubmit()
-    );
+  } 
+ 
+  enableValidation() { 
+    this._setEventListeners(); 
   }
 }

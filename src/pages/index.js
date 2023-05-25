@@ -46,26 +46,26 @@ window.addEventListener("DOMContentLoaded", () => {
   };
 
   //* Генерация карточек
-  const section = new Section(
+  const cardsContainer = new Section(
     {
       renderItems: (data) => {
-        section.addItem(createCard(data));
+        cardsContainer.addItem(createCard(data));
       },
     },
     elementsList
   );
-  section.renderItems(items);
+  cardsContainer.renderItems(items);
 
   //* Попап редактирования профиля
   const userInfo = new UserInfo({ profileName, profileJob });
 
-  const editPopup = new PopupWithForm(editProfilePopup, {
+  const popupEdit = new PopupWithForm(editProfilePopup, {
     formSubmitCallBack: (data) => {
       userInfo.setUserInfo(data);
-      editPopup.close();
+      popupEdit.close();
     },
   });
-  editPopup.setEventListeners();
+  popupEdit.setEventListeners();
 
   //* Попап добавления карточки
   const addNewCardPopup = new PopupWithForm(addCardPopup, {
@@ -97,7 +97,7 @@ window.addEventListener("DOMContentLoaded", () => {
     editProfileNameInput.value = data.name;
     editProfileJobInput.value = data.job;
     editPopupValidation.hideAllErrors();
-    editPopup.open();
+    popupEdit.open();
     profileEditButton.blur();
   });
   profileAddButton.addEventListener("click", () => {

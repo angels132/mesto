@@ -2,18 +2,18 @@ import Popup from "./Popup.js";
 
 //* Класс попапа с формой
 export default class PopupWithForm extends Popup {
-  constructor(popupElement, { formSubmitCallBack }) {
+  constructor(popupElement, { submitFormCallBack }) {
     super(popupElement);
-    this._formSubmitCallBack = formSubmitCallBack;
-    this._formSubmit = this._formSubmit.bind(this);
+    this._submitFormCallBack = submitFormCallBack;
+    this._submitForm= this._submitForm.bind(this);
     this._form = this._popupSelector.querySelector(".popup__form");
     this._inputs = Array.from(this._form.querySelectorAll(".popup__input"));
   }
 
   //* Сабмит формы
-  _formSubmit(evt) {
+  _submitForm(evt) {
     evt.preventDefault();
-    this._formSubmitCallBack(this._getInputValues());
+    this._submitFormCallBack(this._getInputValues());
   }
 
   //* Метод сбора данных со всех полей формы
@@ -34,6 +34,6 @@ export default class PopupWithForm extends Popup {
   //* Перезапись родительского метода установки слушателей
   setEventListeners() {
     super.setEventListeners();
-    this._form.addEventListener("submit", this._formSubmit);
+    this._form.addEventListener("submit", this._submitForm);
   }
 }
