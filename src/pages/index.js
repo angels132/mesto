@@ -8,15 +8,15 @@ import PopupWithForm from "../scripts/components/PopupWithForm.js";
 import PopupWithImage from "../scripts/components/PopupWithImage.js";
 import {
   initialCards as items,
-  editProfilePopup,
+  popupProfileEdit,
   profileEditButton,
   profileJob,
-  addCardPopup,
+  popupAddCard,
   profileName,
   elementsList,
-  openPicturePopup,
-  editProfileNameInput,
-  editProfileJobInput,
+  popupOpenPicture,
+  profileEditNameInput,
+  profileEditJobInput,
   enableValidation,
   profileAddButton,
 } from "../scripts/utils/constants.js";
@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
   };
 
   //* Попап с фото
-  const popupWithImage = new PopupWithImage(openPicturePopup);
+  const popupWithImage = new PopupWithImage(popupOpenPicture);
   popupWithImage.setEventListeners();
 
   //* Создание карточки
@@ -59,7 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
   //* Попап редактирования профиля
   const userInfo = new UserInfo({ profileName, profileJob });
 
-  const popupEdit = new PopupWithForm(editProfilePopup, {
+  const popupEdit = new PopupWithForm(popupProfileEdit, {
     formSubmitCallBack: (data) => {
       userInfo.setUserInfo(data);
       popupEdit.close();
@@ -68,41 +68,41 @@ window.addEventListener("DOMContentLoaded", () => {
   popupEdit.setEventListeners();
 
   //* Попап добавления карточки
-  const addNewCardPopup = new PopupWithForm(addCardPopup, {
+  const popupAddNewCard = new PopupWithForm(popupAddCard, {
     formSubmitCallBack: (data) => {
       const item = {
         name: data.placeName,
         link: data.placeLink,
       };
       section.addItem(createCard(item), true);
-      addNewCardPopup.close();
+      popupAddNewCard.close();
     },
   });
-  addNewCardPopup.setEventListeners();
+  popupAddNewCard.setEventListeners();
 
   //* Создание классов валидации
-  const editPopupValidation = new FormValidator(
+  const popupEditValidation = new FormValidator(
       enableValidation,
-      editProfilePopup
+      popupProfileEdit
     ),
-    addPopupValidation = new FormValidator(enableValidation, addCardPopup);
+    popupAddValidation = new FormValidator(enableValidation, popupAddCard);
 
   //* Активация валидации
-  editPopupValidation.enableValidation();
-  addPopupValidation.enableValidation();
+  popupEditValidation.enableValidation();
+  popupAddValidation.enableValidation();
 
   //* Установка слушателей
   profileEditButton.addEventListener("click", () => {
     const data = userInfo.getUserInfo();
-    editProfileNameInput.value = data.name;
-    editProfileJobInput.value = data.job;
+    profileEditNameInput.value = data.name;
+    profileEditJobInput.value = data.job;
     editPopupValidation.hideAllErrors();
     popupEdit.open();
     profileEditButton.blur();
   });
   profileAddButton.addEventListener("click", () => {
-    addNewCardPopup.open();
+    popupAddNewCard.open();
     profileAddButton.blur();
-    addPopupValidation.hideAllErrors();
+    popupAddValidation.hideAllErrors();
   });
 });

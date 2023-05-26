@@ -70,20 +70,20 @@ export const profileJob = document.querySelector(".profile__job");
 export const profileEditButton = document.querySelector(
   ".profile__edit-button"
 );
-export const editProfilePopup = document.querySelector("#editProfile");
-export const editProfilePopupForm = editProfilePopup.querySelector(
+export const popupProfileEdit = document.querySelector("#editProfile");
+export const popupProfileEditForm = popupProfileEdit.querySelector(
   ".popup__form"
 );
-export const editProfileNameInput = editProfilePopupForm.querySelector(
+export const profileEditNameInput = popupProfileEditForm.querySelector(
   "#popup__name-input"
 );
-export const editProfileJobInput = editProfilePopupForm.querySelector(
+export const profileEditJobInput = popupProfileEditForm.querySelector(
   "#popup__job-input"
 );
 
 export const profileAddButton = document.querySelector(".profile__add-button");
-export const addCardPopup = document.querySelector("#addCard");
+export const popupAddCard = document.querySelector("#addCard");
 
-export const openPicturePopup = document.querySelector("#openPicture");
+export const popupOpenPicture = document.querySelector("#openPicture");
 
 export const elementsList = document.querySelector(".elements__list");
