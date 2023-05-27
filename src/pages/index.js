@@ -60,7 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const userInfo = new UserInfo({ profileName, profileJob });
 
   const popupEdit = new PopupWithForm(popupProfileEdit, {
-    formSubmitCallBack: (data) => {
+    submitFormCallBack: (data) => {
       userInfo.setUserInfo(data);
       popupEdit.close();
     },
@@ -69,12 +69,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   //* Попап добавления карточки
   const popupAddNewCard = new PopupWithForm(popupAddCard, {
-    formSubmitCallBack: (data) => {
+    submitFormCallBack: (data) => {
       const item = {
         name: data.placeName,
         link: data.placeLink,
       };
-      section.addItem(createCard(item), true);
+      cardsContainer.addItem(createCard(item), true);
       popupAddNewCard.close();
     },
   });
@@ -96,7 +96,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const data = userInfo.getUserInfo();
     profileEditNameInput.value = data.name;
     profileEditJobInput.value = data.job;
-    editPopupValidation.hideAllErrors();
+    popupEditValidation.hideAllErrors();
     popupEdit.open();
     profileEditButton.blur();
   });
