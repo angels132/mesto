@@ -1,58 +1,3 @@
-//* Импорт изображений для Webpack
-import morning from '../../images/cards/camping.jpg';
-import house from '../../images/cards/house.jpg';
-import syracuse from '../../images/cards/syracuse.jpg';
-import canyon from '../../images/cards/united-states.jpg';
-import mountainsFog from '../../images/cards/mountains.jpg';
-import iceland from '../../images/cards/iceland.jpg';
-import zion from '../../images/cards/zion-national-park.jpg';
-import grandCanyon from '../../images/cards/grandc.jpg';
-import moab from '../../images/cards/moab.jpg';
-
-
-//* Изначальные карточки
-export const сards = [
-  {
-    name: "Morning in a tent",
-    link: morning,
-  },
-  {
-    name: "Lonely house",
-    link: house,
-  },
-  {
-    name: "Syracuse road, United States",
-    link: syracuse,
-  },
-  {
-    name: "Canyon, United States",
-    link: canyon,
-  },
-  {
-    name: "Mountains fog",
-    link: mountainsFog,
-  },
-  {
-    name: "Iceland",
-    link: iceland,
-  },
-  {
-    name: "Zion National Park, United States",
-    link: zion,
-  },
-  {
-    name: "Grand Canyon National Park, United States",
-    link: grandCanyon,
-  },
-  {
-    name: "Moab, United States",
-    link: moab,
-  },
-];
-
-//* Разворачиваем массив с карточками для отображения по порядку через prepend
-export const initialCards = сards.reverse();
-
 //* Данные для валидации форм
 export const enableValidation = {
   formSelector: ".popup__form",
@@ -66,24 +11,32 @@ export const enableValidation = {
 //* Основные константы
 export const profileName = document.querySelector(".profile__name");
 export const profileJob = document.querySelector(".profile__job");
+export const profileAvatar = document.querySelector(".profile__avatar");
 
 export const profileEditButton = document.querySelector(
   ".profile__edit-button"
 );
-export const popupProfileEdit = document.querySelector("#editProfile");
-export const popupProfileEditForm = popupProfileEdit.querySelector(
+export const profileAvatarEditButton = document.querySelector(
+  ".profile__avatar-edit-button"
+);
+export const avatarEditPopup = document.querySelector("#update");
+export const cardDeletePopup = document.querySelector("#confirm");
+export const editProfilePopup = document.querySelector("#editProfile");
+export const editProfilePopupForm = editProfilePopup.querySelector(
   ".popup__form"
 );
-export const profileEditNameInput = popupProfileEditForm.querySelector(
+export const editProfileNameInput = editProfilePopupForm.querySelector(
   "#popup__name-input"
 );
-export const profileEditJobInput = popupProfileEditForm.querySelector(
+export const editProfileJobInput = editProfilePopupForm.querySelector(
   "#popup__job-input"
 );
 
 export const profileAddButton = document.querySelector(".profile__add-button");
-export const popupAddCard = document.querySelector("#addCard");
+export const addCardPopup = document.querySelector("#addCard");
 
-export const popupOpenPicture = document.querySelector("#openPicture");
+export const openPicturePopup = document.querySelector("#openPicture");
 
 export const elementsList = document.querySelector(".elements__list");
+
+export const spinner = document.querySelector(".spinner");

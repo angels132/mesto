@@ -8,7 +8,7 @@
   color: white;
   border-radius: 5px;
   background: rgb(115, 160, 223);
-  background: url("../../../images/Logo-white.svg"), linear-gradient(180deg, rgba(115, 160, 223, 1) 0%, rgba(77, 79, 163, 0.9) 50%, rgba(49, 21, 120, 0.9) 100%);
+  background: url("../../../images/Logo-white.svg"), linear-gradient(180deg, #01b7ffe7 0%, #0178ffea 50%, #013cffe7 100%);
   background-size: 50%, contain;
   background-repeat: no-repeat;
   background-position: center;

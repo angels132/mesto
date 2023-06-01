@@ -13,7 +13,8 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border: 0;
-  transition: all 0s linear;
+  transition: all .1s linear;
+  display: none;
 }
 
 .elements__delete-button:hover {
@@ -23,7 +24,5 @@
 
 .elements__delete-button:focus {
   outline: none;
-  background-color: #311578;
-  border-radius: 5px;
   opacity: 0.8;
 }

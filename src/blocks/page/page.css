@@ -12,3 +12,7 @@
   text-rendering: optimizeLegibility;
   overflow-y: scroll;
 }
+
+* {
+  /* outline: 1px solid gray;  */
+}

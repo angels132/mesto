@@ -1,9 +1,9 @@
 //* Родительский класс всех попапов
 export default class Popup {
   constructor(popupElement) {
-    this._popupSelector = popupElement;
-    this._popupOverlay = this._popupSelector.querySelector(".popup__overlay");
-    this._popupCloseButton = this._popupSelector.querySelector(
+    this._popupElement = popupElement;
+    this._popupOverlay = this._popupElement.querySelector(".popup__overlay");
+    this._popupCloseButton = this._popupElement.querySelector(
       ".popup__close-button"
     );
     this._handleEscClose = this._handleEscClose.bind(this);
@@ -29,7 +29,7 @@ export default class Popup {
   open() {
     const scrollWidth = this._calcScrollWidth();
     document.addEventListener("keyup", this._handleEscClose);
-    this._popupSelector.classList.add("popup_opened");
+    this._popupElement.classList.add("popup_opened");
     document.body.style.overflow = "hidden";
 
     //* Добавление границы с шириной равной ширине скролла
@@ -39,7 +39,7 @@ export default class Popup {
   //* Метод закрытия попапа
   close() {
     document.removeEventListener("keyup", this._handleEscClose);
-    this._popupSelector.classList.remove("popup_opened");
+    this._popupElement.classList.remove("popup_opened");
     document.body.style.overflow = "";
     document.body.style.borderRight = "none";
   }
@@ -57,7 +57,7 @@ export default class Popup {
       this.close();
     });
     this._popupOverlay.addEventListener("click", () => {
-      if (this._popupSelector.classList.contains("popup_opened")) {
+      if (this._popupElement.classList.contains("popup_opened")) {
         this.close();
       }
     });

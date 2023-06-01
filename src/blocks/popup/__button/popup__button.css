@@ -6,10 +6,10 @@
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
-  padding: 13.66px 0 18.49px 0;
+  padding: 14px 0;
   margin-top: 18px;
   border: none;
-  transition: all 0.2s linear;
+  transition: all .1s linear;
 }
 
 .popup__button:hover {
@@ -19,7 +19,7 @@
 
 @media screen and (max-width: 767px) {
   .popup__button {
-    width: 200px;
+    width: 100%;
     font-size: 14px;
     line-height: 17px;
   }

@@ -46,3 +46,11 @@ ____
 + [Чеклист для самопроверки. 4 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-4.pdf)
 
 + [Чеклист для самопроверки. 5 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-5.pdf)
+
++ [Чеклист для самопроверки. 6 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-6.pdf)
+
++ [Чеклист для самопроверки. 7 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-7.pdf)
+
++ [Чеклист для самопроверки. 8 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-8.pdf)
+
++ [Чеклист для самопроверки. 9 спринт](https://code.s3.yandex.net/web-developer/checklists-pdf/new-program/checklist-9.pdf)

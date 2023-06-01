@@ -3,8 +3,10 @@
 @import url(./__input/popup__input.css);
 @import url(./__input/_type_error/popup__input_type_error.css);
 @import url(./__button/popup__button.css);
+@import url(./__button/_confirm/popup__button_confirm.css);
 @import url(./__button/_disabled/popup__button_disabled.css);
 @import url(./__title/popup__title.css);
+@import url(./__title/_confirm/popup__title_confirm.css);
 @import url(./__fullscreen/popup__fullscreen.css);
 @import url(./__image/popup__image.css);
 @import url(./__image-description/popup__image-description.css);
