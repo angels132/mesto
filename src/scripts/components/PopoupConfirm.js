@@ -8,9 +8,14 @@ export default class PopupConfirm extends Popup {
     this._submit = this._submit.bind(this);
   }
 
+  open(card) {
+    super.open();
+    this.card = card;
+  }
+
   _submit(evt) {
     evt.preventDefault();
-    this._formSubmitCallBack(this.data);
+    this._formSubmitCallBack(this.card);
   }
 
   setEventListeners() {

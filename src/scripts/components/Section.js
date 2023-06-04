@@ -1,8 +1,8 @@
 //* Класс размещения карточек на странице
 export default class Section {
-  constructor({ renderItems }, containerSelector) {
+  constructor({ renderItems }, container) {
     this._renderer = renderItems;
-    this._container = containerSelector;
+    this._container = container;
   }
 
   //* Рендер карточек
